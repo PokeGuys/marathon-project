@@ -1,0 +1,1482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MarathonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BankReceipts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image" Type="ntext" Nullable="false" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="image" Type="text" Nullable="false" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Charities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="image" Type="ntext" />
+          <Property Name="state" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Checkpoints">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marathon_id" Type="int" Nullable="false" />
+          <Property Name="X" Type="int" />
+          <Property Name="Y" Type="int" />
+          <Property Name="landmark" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CheckpointServices">
+          <Key>
+            <PropertyRef Name="checkpoint_id" />
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="checkpoint_id" Type="int" Nullable="false" />
+          <Property Name="service_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="flag" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="distance" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Feedbacks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="message" Type="ntext" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Marathon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="city" Type="nvarchar" MaxLength="255" />
+          <Property Name="country_id" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="hold_at" Type="int" />
+          <Property Name="map" Type="ntext" />
+          <Property Name="logo" Type="ntext" />
+          <Property Name="seal" Type="ntext" />
+        </EntityType>
+        <EntityType Name="MarathonEvents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="quota" Type="int" Nullable="false" />
+          <Property Name="start_at" Type="int" Nullable="false" />
+          <Property Name="end_at" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="cost" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="marathon_id" Type="int" Nullable="false" />
+          <Property Name="start_datetime" Type="int" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+          <Property Name="currentQuota" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="idcard" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="gender" Type="char" MaxLength="1" />
+          <Property Name="phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="birthday" Type="date" />
+          <Property Name="country" Type="char" MaxLength="3" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="lastlogin" Type="int" Nullable="false" />
+          <Property Name="deleted_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="message" Type="ntext" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="image" Type="nvarchar(max)" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceKits">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="price" Type="money" Nullable="false" />
+          <Property Name="stock" Type="int" Nullable="false" />
+          <Property Name="description" Type="ntext" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="sales" Type="int" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="racekit_id" Type="int" Nullable="false" />
+          <Property Name="charity_id" Type="int" Nullable="false" />
+          <Property Name="sponsorship" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="event_id" Type="int" Nullable="false" />
+          <Property Name="approval" Type="int" Nullable="false" />
+          <Property Name="bank_id" Type="int" />
+        </EntityType>
+        <EntityType Name="RunnerEvents">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="registration_id" Type="int" Nullable="false" />
+          <Property Name="finished_at" Type="int" Nullable="false" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+          <Property Name="bib_id" Type="int" Nullable="false" />
+          <Property Name="volunteer_id" Type="int" />
+          <Property Name="racekitsend" Type="int" Nullable="false" />
+          <Property Name="checkin_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="image" Type="ntext" />
+          <Property Name="state" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="runner_id" Type="int" Nullable="false" />
+          <Property Name="amount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="runner" Type="int" />
+          <Property Name="sponsorship" Type="int" />
+          <Property Name="volunteer" Type="int" />
+          <Property Name="created_at" Type="date" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Verifications">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="token" Type="char" MaxLength="40" />
+          <Property Name="created_at" Type="int" Nullable="false" />
+          <Property Name="updated_at" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Checkpoin__check__542C7691">
+          <End Role="Checkpoints" Type="Self.Checkpoints" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CheckpointServices" Type="Self.CheckpointServices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Checkpoints">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CheckpointServices">
+              <PropertyRef Name="checkpoint_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Checkpoin__marat__53385258">
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Checkpoints" Type="Self.Checkpoints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marathon">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Checkpoints">
+              <PropertyRef Name="marathon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Checkpoin__servi__55209ACA">
+          <End Role="Services" Type="Self.Services" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CheckpointServices" Type="Self.CheckpointServices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CheckpointServices">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Marathon__countr__5614BF03">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Marathon">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MarathonE__marat__5708E33C">
+          <End Role="Marathon" Type="Self.Marathon" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MarathonEvents" Type="Self.MarathonEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marathon">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MarathonEvents">
+              <PropertyRef Name="marathon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MarathonE__type___57FD0775">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MarathonEvents" Type="Self.MarathonEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MarathonEvents">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Members__country__673F4B05">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="0..1" />
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Members__gender__6A1BB7B0">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Members__state__58F12BAE">
+          <End Role="Status" Type="Self.Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Members" Type="Self.Members" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Members">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__bank___05C3D225">
+          <End Role="BankReceipts" Type="Self.BankReceipts" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankReceipts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="bank_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__chari__5AD97420">
+          <End Role="Charities" Type="Self.Charities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Charities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="charity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__event__18D6A699">
+          <End Role="MarathonEvents" Type="Self.MarathonEvents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MarathonEvents">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__racek__5BCD9859">
+          <End Role="RaceKits" Type="Self.RaceKits" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceKits">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="racekit_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__user___59E54FE7">
+          <End Role="Members" Type="Self.Members" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RunnerEve__regis__1411F17C">
+          <End Role="Registration" Type="Self.Registration" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RunnerEvents" Type="Self.RunnerEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RunnerEvents">
+              <PropertyRef Name="registration_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RunnerEve__volun__16EE5E27">
+          <End Role="Members" Type="Self.Members" Multiplicity="0..1" />
+          <End Role="RunnerEvents" Type="Self.RunnerEvents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RunnerEvents">
+              <PropertyRef Name="volunteer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sponsorsh__user___6CF8245B">
+          <End Role="Members" Type="Self.Members" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="runner_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Verificat__user___60924D76">
+          <End Role="Members" Type="Self.Members" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Verifications" Type="Self.Verifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Members">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Verifications">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MarathonModelStoreContainer">
+          <EntitySet Name="BankReceipts" EntityType="Self.BankReceipts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Charities" EntityType="Self.Charities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Checkpoints" EntityType="Self.Checkpoints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CheckpointServices" EntityType="Self.CheckpointServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventType" EntityType="Self.EventType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marathon" EntityType="Self.Marathon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MarathonEvents" EntityType="Self.MarathonEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Photos" EntityType="Self.Photos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RaceKits" EntityType="Self.RaceKits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RunnerEvents" EntityType="Self.RunnerEvents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatLog" EntityType="Self.StatLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Verifications" EntityType="Self.Verifications" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Checkpoin__check__542C7691" Association="Self.FK__Checkpoin__check__542C7691">
+            <End Role="Checkpoints" EntitySet="Checkpoints" />
+            <End Role="CheckpointServices" EntitySet="CheckpointServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Checkpoin__marat__53385258" Association="Self.FK__Checkpoin__marat__53385258">
+            <End Role="Marathon" EntitySet="Marathon" />
+            <End Role="Checkpoints" EntitySet="Checkpoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Checkpoin__servi__55209ACA" Association="Self.FK__Checkpoin__servi__55209ACA">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="CheckpointServices" EntitySet="CheckpointServices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Marathon__countr__5614BF03" Association="Self.FK__Marathon__countr__5614BF03">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Marathon" EntitySet="Marathon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MarathonE__marat__5708E33C" Association="Self.FK__MarathonE__marat__5708E33C">
+            <End Role="Marathon" EntitySet="Marathon" />
+            <End Role="MarathonEvents" EntitySet="MarathonEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MarathonE__type___57FD0775" Association="Self.FK__MarathonE__type___57FD0775">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="MarathonEvents" EntitySet="MarathonEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Members__country__673F4B05" Association="Self.FK__Members__country__673F4B05">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Members__gender__6A1BB7B0" Association="Self.FK__Members__gender__6A1BB7B0">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Members__state__58F12BAE" Association="Self.FK__Members__state__58F12BAE">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Members" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__bank___05C3D225" Association="Self.FK__Registrat__bank___05C3D225">
+            <End Role="BankReceipts" EntitySet="BankReceipts" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__chari__5AD97420" Association="Self.FK__Registrat__chari__5AD97420">
+            <End Role="Charities" EntitySet="Charities" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__event__18D6A699" Association="Self.FK__Registrat__event__18D6A699">
+            <End Role="MarathonEvents" EntitySet="MarathonEvents" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__racek__5BCD9859" Association="Self.FK__Registrat__racek__5BCD9859">
+            <End Role="RaceKits" EntitySet="RaceKits" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__user___59E54FE7" Association="Self.FK__Registrat__user___59E54FE7">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Registration" EntitySet="Registration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RunnerEve__regis__1411F17C" Association="Self.FK__RunnerEve__regis__1411F17C">
+            <End Role="Registration" EntitySet="Registration" />
+            <End Role="RunnerEvents" EntitySet="RunnerEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RunnerEve__volun__16EE5E27" Association="Self.FK__RunnerEve__volun__16EE5E27">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="RunnerEvents" EntitySet="RunnerEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sponsorsh__user___6CF8245B" Association="Self.FK__Sponsorsh__user___6CF8245B">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Verificat__user___60924D76" Association="Self.FK__Verificat__user___60924D76">
+            <End Role="Members" EntitySet="Members" />
+            <End Role="Verifications" EntitySet="Verifications" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarathonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MarathonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BankReceipts" EntityType="MarathonModel.BankReceipt" />
+          <EntitySet Name="Banners" EntityType="MarathonModel.Banner" />
+          <EntitySet Name="Charities" EntityType="MarathonModel.Charity" />
+          <EntitySet Name="Checkpoints" EntityType="MarathonModel.Checkpoint" />
+          <EntitySet Name="Countries" EntityType="MarathonModel.Country" />
+          <EntitySet Name="EventTypes" EntityType="MarathonModel.EventType" />
+          <EntitySet Name="Feedbacks" EntityType="MarathonModel.Feedback" />
+          <EntitySet Name="Genders" EntityType="MarathonModel.Gender" />
+          <EntitySet Name="Marathons" EntityType="MarathonModel.Marathon" />
+          <EntitySet Name="MarathonEvents" EntityType="MarathonModel.MarathonEvent" />
+          <EntitySet Name="Members" EntityType="MarathonModel.Member" />
+          <EntitySet Name="News" EntityType="MarathonModel.News" />
+          <EntitySet Name="Photos" EntityType="MarathonModel.Photo" />
+          <EntitySet Name="RaceKits" EntityType="MarathonModel.RaceKit" />
+          <EntitySet Name="Registrations" EntityType="MarathonModel.Registration" />
+          <EntitySet Name="RunnerEvents" EntityType="MarathonModel.RunnerEvent" />
+          <EntitySet Name="Services" EntityType="MarathonModel.Service" />
+          <EntitySet Name="Sponsorships" EntityType="MarathonModel.Sponsorship" />
+          <EntitySet Name="StatLogs" EntityType="MarathonModel.StatLog" />
+          <EntitySet Name="Status" EntityType="MarathonModel.Status" />
+          <EntitySet Name="Verifications" EntityType="MarathonModel.Verification" />
+          <AssociationSet Name="FK__Registrat__bank___05C3D225" Association="MarathonModel.FK__Registrat__bank___05C3D225">
+            <End Role="BankReceipt" EntitySet="BankReceipts" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__chari__5AD97420" Association="MarathonModel.FK__Registrat__chari__5AD97420">
+            <End Role="Charity" EntitySet="Charities" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Checkpoin__marat__53385258" Association="MarathonModel.FK__Checkpoin__marat__53385258">
+            <End Role="Marathon" EntitySet="Marathons" />
+            <End Role="Checkpoint" EntitySet="Checkpoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Marathon__countr__5614BF03" Association="MarathonModel.FK__Marathon__countr__5614BF03">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Marathon" EntitySet="Marathons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Members__country__673F4B05" Association="MarathonModel.FK__Members__country__673F4B05">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Member" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MarathonE__type___57FD0775" Association="MarathonModel.FK__MarathonE__type___57FD0775">
+            <End Role="EventType" EntitySet="EventTypes" />
+            <End Role="MarathonEvent" EntitySet="MarathonEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Members__gender__6A1BB7B0" Association="MarathonModel.FK__Members__gender__6A1BB7B0">
+            <End Role="Gender" EntitySet="Genders" />
+            <End Role="Member" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MarathonE__marat__5708E33C" Association="MarathonModel.FK__MarathonE__marat__5708E33C">
+            <End Role="Marathon" EntitySet="Marathons" />
+            <End Role="MarathonEvent" EntitySet="MarathonEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__event__18D6A699" Association="MarathonModel.FK__Registrat__event__18D6A699">
+            <End Role="MarathonEvent" EntitySet="MarathonEvents" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Members__state__58F12BAE" Association="MarathonModel.FK__Members__state__58F12BAE">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Member" EntitySet="Members" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__user___59E54FE7" Association="MarathonModel.FK__Registrat__user___59E54FE7">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RunnerEve__volun__16EE5E27" Association="MarathonModel.FK__RunnerEve__volun__16EE5E27">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="RunnerEvent" EntitySet="RunnerEvents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sponsorsh__user___6CF8245B" Association="MarathonModel.FK__Sponsorsh__user___6CF8245B">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Sponsorship" EntitySet="Sponsorships" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Verificat__user___60924D76" Association="MarathonModel.FK__Verificat__user___60924D76">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="Verification" EntitySet="Verifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrat__racek__5BCD9859" Association="MarathonModel.FK__Registrat__racek__5BCD9859">
+            <End Role="RaceKit" EntitySet="RaceKits" />
+            <End Role="Registration" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RunnerEve__regis__1411F17C" Association="MarathonModel.FK__RunnerEve__regis__1411F17C">
+            <End Role="Registration" EntitySet="Registrations" />
+            <End Role="RunnerEvent" EntitySet="RunnerEvents" />
+          </AssociationSet>
+          <AssociationSet Name="CheckpointServices" Association="MarathonModel.CheckpointServices">
+            <End Role="Checkpoint" EntitySet="Checkpoints" />
+            <End Role="Service" EntitySet="Services" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BankReceipt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Registrations" Relationship="MarathonModel.FK__Registrat__bank___05C3D225" FromRole="BankReceipt" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Banner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Charity">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Registrations" Relationship="MarathonModel.FK__Registrat__chari__5AD97420" FromRole="Charity" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Checkpoint">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marathon_id" Type="Int32" Nullable="false" />
+          <Property Name="X" Type="Int32" />
+          <Property Name="Y" Type="Int32" />
+          <Property Name="landmark" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Marathon" Relationship="MarathonModel.FK__Checkpoin__marat__53385258" FromRole="Checkpoint" ToRole="Marathon" />
+          <NavigationProperty Name="Services" Relationship="MarathonModel.CheckpointServices" FromRole="Checkpoint" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="flag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Marathons" Relationship="MarathonModel.FK__Marathon__countr__5614BF03" FromRole="Country" ToRole="Marathon" />
+          <NavigationProperty Name="Members" Relationship="MarathonModel.FK__Members__country__673F4B05" FromRole="Country" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="EventType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="distance" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MarathonEvents" Relationship="MarathonModel.FK__MarathonE__type___57FD0775" FromRole="EventType" ToRole="MarathonEvent" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Members" Relationship="MarathonModel.FK__Members__gender__6A1BB7B0" FromRole="Gender" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="Marathon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="city" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="country_id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="hold_at" Type="Int32" />
+          <Property Name="map" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="seal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Checkpoints" Relationship="MarathonModel.FK__Checkpoin__marat__53385258" FromRole="Marathon" ToRole="Checkpoint" />
+          <NavigationProperty Name="Country" Relationship="MarathonModel.FK__Marathon__countr__5614BF03" FromRole="Marathon" ToRole="Country" />
+          <NavigationProperty Name="MarathonEvents" Relationship="MarathonModel.FK__MarathonE__marat__5708E33C" FromRole="Marathon" ToRole="MarathonEvent" />
+        </EntityType>
+        <EntityType Name="MarathonEvent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="type_id" Type="Int32" Nullable="false" />
+          <Property Name="quota" Type="Int32" Nullable="false" />
+          <Property Name="start_at" Type="Int32" Nullable="false" />
+          <Property Name="end_at" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="cost" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="marathon_id" Type="Int32" Nullable="false" />
+          <Property Name="start_datetime" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <Property Name="currentQuota" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="EventType" Relationship="MarathonModel.FK__MarathonE__type___57FD0775" FromRole="MarathonEvent" ToRole="EventType" />
+          <NavigationProperty Name="Marathon" Relationship="MarathonModel.FK__MarathonE__marat__5708E33C" FromRole="MarathonEvent" ToRole="Marathon" />
+          <NavigationProperty Name="Registrations" Relationship="MarathonModel.FK__Registrat__event__18D6A699" FromRole="MarathonEvent" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idcard" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <Property Name="country" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="lastlogin" Type="Int32" Nullable="false" />
+          <Property Name="deleted_at" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Country1" Relationship="MarathonModel.FK__Members__country__673F4B05" FromRole="Member" ToRole="Country" />
+          <NavigationProperty Name="Gender1" Relationship="MarathonModel.FK__Members__gender__6A1BB7B0" FromRole="Member" ToRole="Gender" />
+          <NavigationProperty Name="Status" Relationship="MarathonModel.FK__Members__state__58F12BAE" FromRole="Member" ToRole="Status" />
+          <NavigationProperty Name="Registrations" Relationship="MarathonModel.FK__Registrat__user___59E54FE7" FromRole="Member" ToRole="Registration" />
+          <NavigationProperty Name="RunnerEvents" Relationship="MarathonModel.FK__RunnerEve__volun__16EE5E27" FromRole="Member" ToRole="RunnerEvent" />
+          <NavigationProperty Name="Sponsorships" Relationship="MarathonModel.FK__Sponsorsh__user___6CF8245B" FromRole="Member" ToRole="Sponsorship" />
+          <NavigationProperty Name="Verifications" Relationship="MarathonModel.FK__Verificat__user___60924D76" FromRole="Member" ToRole="Verification" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Photo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceKit">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="stock" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="sales" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Registrations" Relationship="MarathonModel.FK__Registrat__racek__5BCD9859" FromRole="RaceKit" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="cost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="racekit_id" Type="Int32" Nullable="false" />
+          <Property Name="charity_id" Type="Int32" Nullable="false" />
+          <Property Name="sponsorship" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="event_id" Type="Int32" Nullable="false" />
+          <Property Name="approval" Type="Int32" Nullable="false" />
+          <Property Name="bank_id" Type="Int32" />
+          <NavigationProperty Name="BankReceipt" Relationship="MarathonModel.FK__Registrat__bank___05C3D225" FromRole="Registration" ToRole="BankReceipt" />
+          <NavigationProperty Name="Charity" Relationship="MarathonModel.FK__Registrat__chari__5AD97420" FromRole="Registration" ToRole="Charity" />
+          <NavigationProperty Name="MarathonEvent" Relationship="MarathonModel.FK__Registrat__event__18D6A699" FromRole="Registration" ToRole="MarathonEvent" />
+          <NavigationProperty Name="Member" Relationship="MarathonModel.FK__Registrat__user___59E54FE7" FromRole="Registration" ToRole="Member" />
+          <NavigationProperty Name="RaceKit" Relationship="MarathonModel.FK__Registrat__racek__5BCD9859" FromRole="Registration" ToRole="RaceKit" />
+          <NavigationProperty Name="RunnerEvents" Relationship="MarathonModel.FK__RunnerEve__regis__1411F17C" FromRole="Registration" ToRole="RunnerEvent" />
+        </EntityType>
+        <EntityType Name="RunnerEvent">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="registration_id" Type="Int32" Nullable="false" />
+          <Property Name="finished_at" Type="Int32" Nullable="false" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <Property Name="bib_id" Type="Int32" Nullable="false" />
+          <Property Name="volunteer_id" Type="Int32" />
+          <Property Name="racekitsend" Type="Int32" Nullable="false" />
+          <Property Name="checkin_at" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="MarathonModel.FK__RunnerEve__volun__16EE5E27" FromRole="RunnerEvent" ToRole="Member" />
+          <NavigationProperty Name="Registration" Relationship="MarathonModel.FK__RunnerEve__regis__1411F17C" FromRole="RunnerEvent" ToRole="Registration" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Checkpoints" Relationship="MarathonModel.CheckpointServices" FromRole="Service" ToRole="Checkpoint" />
+        </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="runner_id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="MarathonModel.FK__Sponsorsh__user___6CF8245B" FromRole="Sponsorship" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="StatLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="runner" Type="Int32" />
+          <Property Name="sponsorship" Type="Int32" />
+          <Property Name="volunteer" Type="Int32" />
+          <Property Name="created_at" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Members" Relationship="MarathonModel.FK__Members__state__58F12BAE" FromRole="Status" ToRole="Member" />
+        </EntityType>
+        <EntityType Name="Verification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="token" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="created_at" Type="Int32" Nullable="false" />
+          <Property Name="updated_at" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="MarathonModel.FK__Verificat__user___60924D76" FromRole="Verification" ToRole="Member" />
+        </EntityType>
+        <Association Name="FK__Registrat__bank___05C3D225">
+          <End Type="MarathonModel.BankReceipt" Role="BankReceipt" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Registration" Role="Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankReceipt">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="bank_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__chari__5AD97420">
+          <End Type="MarathonModel.Charity" Role="Charity" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Registration" Role="Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Charity">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="charity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Checkpoin__marat__53385258">
+          <End Type="MarathonModel.Marathon" Role="Marathon" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Checkpoint" Role="Checkpoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marathon">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Checkpoint">
+              <PropertyRef Name="marathon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Marathon__countr__5614BF03">
+          <End Type="MarathonModel.Country" Role="Country" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Marathon" Role="Marathon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Marathon">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Members__country__673F4B05">
+          <End Type="MarathonModel.Country" Role="Country" Multiplicity="0..1" />
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Member">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MarathonE__type___57FD0775">
+          <End Type="MarathonModel.EventType" Role="EventType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.MarathonEvent" Role="MarathonEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EventType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MarathonEvent">
+              <PropertyRef Name="type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Members__gender__6A1BB7B0">
+          <End Type="MarathonModel.Gender" Role="Gender" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Member">
+              <PropertyRef Name="gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MarathonE__marat__5708E33C">
+          <End Type="MarathonModel.Marathon" Role="Marathon" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.MarathonEvent" Role="MarathonEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marathon">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MarathonEvent">
+              <PropertyRef Name="marathon_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__event__18D6A699">
+          <End Type="MarathonModel.MarathonEvent" Role="MarathonEvent" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Registration" Role="Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MarathonEvent">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="event_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Members__state__58F12BAE">
+          <End Type="MarathonModel.Status" Role="Status" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Member">
+              <PropertyRef Name="state" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__user___59E54FE7">
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Registration" Role="Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RunnerEve__volun__16EE5E27">
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="0..1" />
+          <End Type="MarathonModel.RunnerEvent" Role="RunnerEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RunnerEvent">
+              <PropertyRef Name="volunteer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sponsorsh__user___6CF8245B">
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="runner_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Verificat__user___60924D76">
+          <End Type="MarathonModel.Member" Role="Member" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Verification" Role="Verification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Verification">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrat__racek__5BCD9859">
+          <End Type="MarathonModel.RaceKit" Role="RaceKit" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.Registration" Role="Registration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceKit">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Registration">
+              <PropertyRef Name="racekit_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RunnerEve__regis__1411F17C">
+          <End Type="MarathonModel.Registration" Role="Registration" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MarathonModel.RunnerEvent" Role="RunnerEvent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registration">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RunnerEvent">
+              <PropertyRef Name="registration_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CheckpointServices">
+          <End Type="MarathonModel.Checkpoint" Role="Checkpoint" Multiplicity="*" />
+          <End Type="MarathonModel.Service" Role="Service" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarathonModelStoreContainer" CdmEntityContainer="MarathonEntities">
+          <EntitySetMapping Name="BankReceipts">
+            <EntityTypeMapping TypeName="MarathonModel.BankReceipt">
+              <MappingFragment StoreEntitySet="BankReceipts">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Banners">
+            <EntityTypeMapping TypeName="MarathonModel.Banner">
+              <MappingFragment StoreEntitySet="Banner">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Charities">
+            <EntityTypeMapping TypeName="MarathonModel.Charity">
+              <MappingFragment StoreEntitySet="Charities">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Checkpoints">
+            <EntityTypeMapping TypeName="MarathonModel.Checkpoint">
+              <MappingFragment StoreEntitySet="Checkpoints">
+                <ScalarProperty Name="landmark" ColumnName="landmark" />
+                <ScalarProperty Name="Y" ColumnName="Y" />
+                <ScalarProperty Name="X" ColumnName="X" />
+                <ScalarProperty Name="marathon_id" ColumnName="marathon_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MarathonModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventTypes">
+            <EntityTypeMapping TypeName="MarathonModel.EventType">
+              <MappingFragment StoreEntitySet="EventType">
+                <ScalarProperty Name="distance" ColumnName="distance" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="MarathonModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedbacks">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="MarathonModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marathons">
+            <EntityTypeMapping TypeName="MarathonModel.Marathon">
+              <MappingFragment StoreEntitySet="Marathon">
+                <ScalarProperty Name="seal" ColumnName="seal" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="map" ColumnName="map" />
+                <ScalarProperty Name="hold_at" ColumnName="hold_at" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MarathonEvents">
+            <EntityTypeMapping TypeName="MarathonModel.MarathonEvent">
+              <MappingFragment StoreEntitySet="MarathonEvents">
+                <ScalarProperty Name="currentQuota" ColumnName="currentQuota" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="start_datetime" ColumnName="start_datetime" />
+                <ScalarProperty Name="marathon_id" ColumnName="marathon_id" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="end_at" ColumnName="end_at" />
+                <ScalarProperty Name="start_at" ColumnName="start_at" />
+                <ScalarProperty Name="quota" ColumnName="quota" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="MarathonModel.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="deleted_at" ColumnName="deleted_at" />
+                <ScalarProperty Name="lastlogin" ColumnName="lastlogin" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="idcard" ColumnName="idcard" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="MarathonModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Photos">
+            <EntityTypeMapping TypeName="MarathonModel.Photo">
+              <MappingFragment StoreEntitySet="Photos">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RaceKits">
+            <EntityTypeMapping TypeName="MarathonModel.RaceKit">
+              <MappingFragment StoreEntitySet="RaceKits">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="sales" ColumnName="sales" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="MarathonModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="bank_id" ColumnName="bank_id" />
+                <ScalarProperty Name="approval" ColumnName="approval" />
+                <ScalarProperty Name="event_id" ColumnName="event_id" />
+                <ScalarProperty Name="sponsorship" ColumnName="sponsorship" />
+                <ScalarProperty Name="charity_id" ColumnName="charity_id" />
+                <ScalarProperty Name="racekit_id" ColumnName="racekit_id" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RunnerEvents">
+            <EntityTypeMapping TypeName="MarathonModel.RunnerEvent">
+              <MappingFragment StoreEntitySet="RunnerEvents">
+                <ScalarProperty Name="checkin_at" ColumnName="checkin_at" />
+                <ScalarProperty Name="racekitsend" ColumnName="racekitsend" />
+                <ScalarProperty Name="volunteer_id" ColumnName="volunteer_id" />
+                <ScalarProperty Name="bib_id" ColumnName="bib_id" />
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="finished_at" ColumnName="finished_at" />
+                <ScalarProperty Name="registration_id" ColumnName="registration_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="MarathonModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sponsorships">
+            <EntityTypeMapping TypeName="MarathonModel.Sponsorship">
+              <MappingFragment StoreEntitySet="Sponsorship">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="runner_id" ColumnName="runner_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatLogs">
+            <EntityTypeMapping TypeName="MarathonModel.StatLog">
+              <MappingFragment StoreEntitySet="StatLog">
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="volunteer" ColumnName="volunteer" />
+                <ScalarProperty Name="sponsorship" ColumnName="sponsorship" />
+                <ScalarProperty Name="runner" ColumnName="runner" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="MarathonModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Verifications">
+            <EntityTypeMapping TypeName="MarathonModel.Verification">
+              <MappingFragment StoreEntitySet="Verifications">
+                <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="token" ColumnName="token" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CheckpointServices" TypeName="MarathonModel.CheckpointServices" StoreEntitySet="CheckpointServices">
+            <EndProperty Name="Service">
+              <ScalarProperty Name="id" ColumnName="service_id" />
+            </EndProperty>
+            <EndProperty Name="Checkpoint">
+              <ScalarProperty Name="id" ColumnName="checkpoint_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

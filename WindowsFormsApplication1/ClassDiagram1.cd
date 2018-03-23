@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="MarathonSystem.Components.MessageHelper">
+    <Position X="32.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\MessageHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Components.Table" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAJAIAAACgAAAAEAAiAAgASAAABAAAAAAAAAIQAAAA=</HashCode>
+      <FileName>Components\Table.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Exceptions.ConflictException" Collapsed="true">
+    <Position X="29.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\ConflictException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Exceptions.NotFoundException" Collapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\NotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Exceptions.UnprocessableEntityException" Collapsed="true">
+    <Position X="29.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\UnprocessableEntityException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.frm_index" Collapsed="true">
+    <Position X="10.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>5rV/q////7//3OH78Xf/+//b+s+9///l95/8//v8vJs=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Bank" Collapsed="true">
+    <Position X="10.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAEIAAAjRAAQRDAAHCAQgCEAQVAAAQAATlAAABgAA=</HashCode>
+      <FileName>Frm_Bank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Banner" Collapsed="true">
+    <Position X="12" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAEAACRAAYADAAGCAQgDEAABIAASAABgBAQAggA=</HashCode>
+      <FileName>Frm_Banner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Certificate" Collapsed="true">
+    <Position X="19" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAEAAQAACAAApIAAACAAAACAAEEAAAYAAAAAAAQEAg=</HashCode>
+      <FileName>Frm_Certificate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Charity" Collapsed="true">
+    <Position X="19" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAGAACRAAYADAAHCAQgCEAABIAASAIBgBAAAggA=</HashCode>
+      <FileName>Frm_Charity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_CharityInfo" Collapsed="true">
+    <Position X="10.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAACRAAIAAAAGAAAgCAAABQAAAAABgAAAAAgg=</HashCode>
+      <FileName>Frm_CharityInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_CheckptService" Collapsed="true">
+    <Position X="12" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAiFABACCACBqCCAAAACABAABgBEAAA0Y=</HashCode>
+      <FileName>Frm_CheckptService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.frm_credit" Collapsed="true">
+    <Position X="13.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgEEMBBhDRAARRCAQHAAApCAQQVAAAABATlAAADACA=</HashCode>
+      <FileName>Frm_Credit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_EventResult" Collapsed="true">
+    <Position X="17.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAAYBAIiBQIABAAInAALjCAwAAAAJoBABwAEADAoI=</HashCode>
+      <FileName>Frm_EventResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Info" Collapsed="true">
+    <Position X="12" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIiAEAMAACQAABAFAACAACgGAAABIQAjgABgBAgAAkg=</HashCode>
+      <FileName>Frm_Info.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Login" Collapsed="true">
+    <Position X="19" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEEQgAEGRAIAAAAAGAAAgCAAAAAAAAACBgAAAEAAA=</HashCode>
+      <FileName>Frm_Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_ManageMarathon" Collapsed="true">
+    <Position X="17.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIABmAEAAGQBgBADgECEACwCEAAFIAADACBiBAAgAgI=</HashCode>
+      <FileName>Frm_ManageMarathon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Marathon" Collapsed="true">
+    <Position X="10.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQwOpEJjPRAAIBIABPAEAhCYAAwCAIABID3EQFgAAE=</HashCode>
+      <FileName>Frm_Marathon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_News" Collapsed="true">
+    <Position X="12" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAEAACRAAABBAAGAAAgCAAABIAACEABgBQAAAgA=</HashCode>
+      <FileName>Frm_News.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Password" Collapsed="true">
+    <Position X="13.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAEEQkAACQAAAAAAAGABAhCAAAAAAABACBgBAAEAAA=</HashCode>
+      <FileName>Frm_Password.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Payment" Collapsed="true">
+    <Position X="15.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBAEACQAQAAAIgTAAAgGAAAAQAAAAAAAAQAAAiA=</HashCode>
+      <FileName>Frm_Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_PaymentMethod" Collapsed="true">
+    <Position X="17.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCEAAAADRAAQQAAEHEAAgCBAAVAAAAAADlAAAAAAA=</HashCode>
+      <FileName>Frm_PaymentMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Photo" Collapsed="true">
+    <Position X="13.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAEAACRAAYADAAOCAQgDEAABIAASAABgBAAAggA=</HashCode>
+      <FileName>Frm_Photo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Profile" Collapsed="true">
+    <Position X="15.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAUUQlAECQAwoIAAQCBJhpCBQAQEEADACBgBAAAAQA=</HashCode>
+      <FileName>Frm_Profile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_RaceBib" Collapsed="true">
+    <Position X="19" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACAQAIASAQABCAACXAABhCAAAAACA5AIBphGCAAoE=</HashCode>
+      <FileName>Frm_RaceBib.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Racekit" Collapsed="true">
+    <Position X="17.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEIEAACRAoJAIAACAAAgCAAABAAADABBgBAAAAgg=</HashCode>
+      <FileName>Frm_Racekit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.frm_Register" Collapsed="true">
+    <Position X="10.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAE1QgAEKAAw4UIIIWBEChCBQQQgkAjAaRkBAgEgAg=</HashCode>
+      <FileName>Frm_Register.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Result" Collapsed="true">
+    <Position X="12" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAABgCAAAIAAAAACAAAGAEAAA=</HashCode>
+      <FileName>Frm_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Runner" Collapsed="true">
+    <Position X="13.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIANUCFJACQAwJIAAQiBABhDAQAQAEADICBgJIAAAwA=</HashCode>
+      <FileName>Frm_Runner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_RunnerEvent" Collapsed="true">
+    <Position X="15.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQEBggACQAAAZAAACAAAgCQAAAAAABAABwTCAAAgA=</HashCode>
+      <FileName>Frm_RunnerEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Service" Collapsed="true">
+    <Position X="17.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAEAEAACRAAYADAAGCAQgCEAABIAASAABgRAAAggA=</HashCode>
+      <FileName>Frm_Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Sponsor" Collapsed="true">
+    <Position X="13.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAACAAAYAAAACAEEgCAAAQAAhBACDgBICAAAA=</HashCode>
+      <FileName>Frm_Sponsor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Verification" Collapsed="true">
+    <Position X="15.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoACEAEAACQAAAAAAACAAAgCAAAAAAADAABgBAAAIAA=</HashCode>
+      <FileName>Frm_Verification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Frm_Volunteer" Collapsed="true">
+    <Position X="19" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAACEAAAACQAAAAAAACAEAgCAAABAAABAADgBAIAAwA=</HashCode>
+      <FileName>Frm_Volunteer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Program" Collapsed="true">
+    <Position X="31" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQ=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Formatters.MessageFormatter">
+    <Position X="34.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAAACA=</HashCode>
+      <FileName>Formatters\MessageFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.Frm_Event" Collapsed="true">
+    <Position X="15.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAABgCAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Frm_Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.BannerTransformer">
+    <Position X="12.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\BannerTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.CharityTransformer">
+    <Position X="12.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\CharityTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.CheckPointTransformer">
+    <Position X="16.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\CheckPointTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.EventTransformer">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\EventTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.FeedbackTransformer">
+    <Position X="7.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\FeedbackTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.MapTransformer">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\MapTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.MarathonTransformer">
+    <Position X="3.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\MarathonTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.MemberTransformer">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\MemberTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.NewsTransformer">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\NewsTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.PaymentTransformer">
+    <Position X="7.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\PaymentTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.PhotoTransformer">
+    <Position X="14.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\PhotoTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.RacekitTransformer">
+    <Position X="16.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\RacekitTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.RegistrationTransformer">
+    <Position X="14.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\RegistrationTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.ResultTransformer">
+    <Position X="12.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\ResultTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.RunnerEvnetTransformer">
+    <Position X="5.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\RunnerEvnetTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.ServiceTransformer">
+    <Position X="14.5" Y="7" Width="1.5" />
+    <InheritanceLine Type="MarathonSystem.Transformers.Transformer" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.296" />
+        <Point X="10.75" Y="6.7" />
+        <Point X="15.25" Y="6.7" />
+        <Point X="15.25" Y="7" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\ServiceTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.Transformer">
+    <Position X="10" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Transformers\Transformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Transformers.VolunteerTransformer">
+    <Position X="3.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Transformers\VolunteerTransformer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Helpers.ComboboxItem">
+    <Position X="31" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
+      <FileName>Helpers\ComboboxItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Helpers.ValidatesAttributes">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAAAIAAIIAQAAABAAAAACCACAACAAAAQAAEAYAABA=</HashCode>
+      <FileName>Helpers\ValidatesAttributes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Helpers.Validator">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAIAACAACAAAAAAkAAAAAAAAAAAAAABAAQAAAIGA=</HashCode>
+      <FileName>Helpers\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Mail.Mailgun">
+    <Position X="34.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAgAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mail\Mailgun.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Middlewares.Auth">
+    <Position X="27.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAQAAAIAAQAAAEAAAAAAACCAggACAACCAAAAQA=</HashCode>
+      <FileName>Middlewares\Authentication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Middlewares.Route">
+    <Position X="32.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Middlewares\Route.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.MarathonEntities" Collapsed="true">
+    <Position X="5.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAEEEIAEMAACAmAAAAACAQBIEAAAAAAAAAAEECAAAEA=</HashCode>
+      <FileName>Models\marathonModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.BankReceipt" Collapsed="true">
+    <Position X="3" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAECAAAAAAAACAAAAAAgA=</HashCode>
+      <FileName>Models\BankReceipt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Banner" Collapsed="true">
+    <Position X="4.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAECAEAAAAAACAAAAAAgA=</HashCode>
+      <FileName>Models\Banner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Charity" Collapsed="true">
+    <Position X="6.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAIAAAAAAAECAEAAAEAACAAAAAAgA=</HashCode>
+      <FileName>Models\Charity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Checkpoint" Collapsed="true">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAEAAAYgA=</HashCode>
+      <FileName>Models\Checkpoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Country" Collapsed="true">
+    <Position X="3" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAEEAAAAgA=</HashCode>
+      <FileName>Models\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.EventType" Collapsed="true">
+    <Position X="4.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\EventType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Feedback" Collapsed="true">
+    <Position X="6.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAEAAAEAACAAAAAAiA=</HashCode>
+      <FileName>Models\Feedback.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Gender" Collapsed="true">
+    <Position X="8.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAgA=</HashCode>
+      <FileName>Models\Gender.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Marathon" Collapsed="true">
+    <Position X="3" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAFAAAEAFAAEAAAAAACAAAAAIEAAAAAAAAAEAAAgA=</HashCode>
+      <FileName>Models\Marathon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.MarathonEvent" Collapsed="true">
+    <Position X="4.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgICAAAAAAAAAAgACAAAEACAUAAAEAICAEAAAIgA=</HashCode>
+      <FileName>Models\MarathonEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Member" Collapsed="true">
+    <Position X="6.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAEIAAAAAEgAAAAgAkAADAEACAmAACQAiAAAoA=</HashCode>
+      <FileName>Models\Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.News" Collapsed="true">
+    <Position X="8.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAACAAAAAAAACAAAAAAiA=</HashCode>
+      <FileName>Models\News.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Photo" Collapsed="true">
+    <Position X="3" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAECAEAAAAAACAAAAAAgA=</HashCode>
+      <FileName>Models\Photo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.RaceKit" Collapsed="true">
+    <Position X="4.75" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAIAAAAAAAAAEIAAAAAAAACAEAIAEAACAAAAAAgA=</HashCode>
+      <FileName>Models\RaceKit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Registration" Collapsed="true">
+    <Position X="6.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgABAAAAAAAABCAAAAACAYAAAAAoCFACAAIkA=</HashCode>
+      <FileName>Models\Registration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.RunnerEvent" Collapsed="true">
+    <Position X="8.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAACAAAAAAAAAEAAAAjAIAAAAAQCAAAAEAgA=</HashCode>
+      <FileName>Models\RunnerEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Service" Collapsed="true">
+    <Position X="3" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAEAAEAAAEAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Sponsorship" Collapsed="true">
+    <Position X="4.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAACAMgAAAAACAAAAAAgA=</HashCode>
+      <FileName>Models\Sponsorship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.StatLog" Collapsed="true">
+    <Position X="6.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAQAAAAAAAAAAACAAAABAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\StatLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Status" Collapsed="true">
+    <Position X="8.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAgA=</HashCode>
+      <FileName>Models\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Models.Verification" Collapsed="true">
+    <Position X="3" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgAAAAAAAAAAAAAAAAACAIAAAAAACAAAAAAgA=</HashCode>
+      <FileName>Models\Verification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Properties.Resources" Collapsed="true">
+    <Position X="29.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GIIbAxFyChMGASBwAgKLWxAgAQyQMgQEBIQAQVAjNdA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Properties.Settings" Collapsed="true">
+    <Position X="32.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAIAAAAAABAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Properties.strings" Collapsed="true">
+    <Position X="29.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFADAAIACAACEAAiAAABMABDAQACCAAQAAAAAAgIAIQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.MemberController">
+    <Position X="25.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAEIAAAAAAAAAAAECAQAAAAQEAAAFAAA=</HashCode>
+      <FileName>Controllers\MemberController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.PropertyController">
+    <Position X="20.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAQAAAAAAECAAAAAAAAAACBAACAAAAAAQAiAA=</HashCode>
+      <FileName>Controllers\PropertyController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.PhotoController">
+    <Position X="18.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PhotoController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.VerificationController">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\VerificationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.VolunteerController">
+    <Position X="22.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAAA0AAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\VolunteerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.WeatherController">
+    <Position X="24" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAgAQAAACAABAAQAAAAAAAAAAAAIAAAAAAAAAAEA=</HashCode>
+      <FileName>Controllers\WeatherController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.BannerController">
+    <Position X="18.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\BannerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.CharityController">
+    <Position X="20.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\CharityController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.FeedbackController">
+    <Position X="24" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\FeedbackController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.EventController">
+    <Position X="22.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAQARAEABAIAAAAAAGACAQAAKAEQAAAASAAA=</HashCode>
+      <FileName>Controllers\EventController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.MapController">
+    <Position X="18.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAABAEAAAAAAAAAAAAMACEIAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MapController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.MarathonController">
+    <Position X="20.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\MarathonController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.PaymentController">
+    <Position X="25.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAABAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\PaymentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.NewsController">
+    <Position X="24" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\NewsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarathonSystem.Controllers.RaceKitController">
+    <Position X="25.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAABAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\RaceKitController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
